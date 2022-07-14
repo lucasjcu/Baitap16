@@ -16,12 +16,15 @@ struct ContentView: View {
                 ForEach(model.authors) { t in
 
                     NavigationLink(destination: DetailView(detail: t), label: {
+                        ZStack{
+                            Image(t.image)
+                                .resizable()
+                                .scaledToFill()
+                                .cornerRadius(15)
+                                .padding()
+                            Text(t.name)
+                        }
                         
-                        Image(t.image)
-                            .resizable()
-                            .scaledToFill()
-                            .cornerRadius(15)
-                            .padding()
                     })
                    
                 }
